@@ -1,71 +1,182 @@
-body {
-  margin: 0; /* ボックス外側の余白 */
-  padding: 0; /* ボックス内側の余白 */
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
+/* ================================================
+リセットcss：HTML5 Doctor CSS Reset 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+================================================ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  font-family: Noto Sans CJK JP;
 }
 
+body {
+  line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+  display:block;
+}
+
+nav ul {
+  list-style:none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
+  color: #000;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color:#ff9;
+  color:#000; 
+  font-style:italic;
+  font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display:block;
+  height:1px;
+  border:0;   
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+
+@media only screen and (min-device-width: 561px) {
+
+/* ================================================
+PC：header 
+================================================ */
 
 header{
   width: 100%;
   height: 99px;
-  top: 0;
-  position: fixed; /*fixed:絶対位置で場所を指定する*/
+  position: fixed;
+  top: 0px;
   z-index:1000;
   background-color: #fff;
 }
 
-.hdr-inr{
+.header_inner{
   width: 1140px;
   height: 99px;
-  margin: auto auto; /* ボックス外側の余白 */
+  margin: auto auto;
   display: flex;
-  align-items: center; /* 垂直方向の配置：中央 */
-  justify-content: space-between; /* 横方向の配置：均一（サイドぴったり） */
+  align-items: center;
+  justify-content: space-between;
 }
 
-h1.header{
-  color: #48bac2; /* テキストのカラー設定 */
+.header_inner h1{
+  color: #48bac2;
   font-size: 40px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
+  font-weight: bold;
 }
 
-nav.header{
-  margin: 0 0px 0 0;
+.header_inner h1 a{
+  color: #48bac2;
 }
 
-ul.header{
+.header_inner ul{
   list-style: none;
-  margin: 0;
   display: flex;
-  align-items: center; /* 垂直報告の配置：中央 */
+  align-items: center;
 }
 
-li.header{
-  margin: 0 0 0 15px;
+.header_inner li{
+  margin: 0 0 0 40px;
   font-size: 18px;
 }
 
-li.headerX{
-  margin: 0 0 0 15px;
-}
-
-a.headerA{
+.header_inner li a{
   text-decoration: none;
   color: #48bac2;
   display: inline-block;
   position: relative;
 }
 
-a.header{
+.header_inner li a i{
   text-decoration: none;
-  color: #48bac2;
-  display: inline-block;
-  position: relative;
+  font-size: 25px;
+  color: #fff5fe;
+  background-color: #48bac2;
+  height: 48px;
+  width: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a.header::after {
+.header_inner li a i::after{
+  content: 'MAIL';
+  margin: 0 0 0 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header_inner li a::after {
   position: absolute;
   content: '';
   bottom: 0;
@@ -76,160 +187,123 @@ a.header::after {
   transition: all 0.3s ease 0s;
 }
 
-a.header:hover {
+.header_inner li a:hover {
   cursor: pointer;
 }
 
-a.header:hover::after {
+.header_inner li a:hover::after {
   width: 100%;
 }
 
-a.headerX{
-  text-decoration: none;
-  font-size: 15px;
-  color: #fff5fe;
-  background-color: #48bac2;
-  height: 48px;
-  width: 105px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header_SP{
+  display: none;
 }
 
-.headerX::after{
-  content: 'MAIL';
-  margin: 0 0 0 5px; /* ボックス外側の余白 */
-}
+/* ================================================
+PC：main：イメージ1
+================================================ */
 
-img {
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
-}
-
-.mainimage{
+.main_img1{
   background-image:url(images/mainimage1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   width: 100%;
   height: 668px;
-  margin: 0 auto; /* ボックス外側の余白 */
-  padding: 0; /* ボックス内側の余白 */
+  margin: 99px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.mainimage-txt{
-  width: 750px;
-}
-
-h2.mainimage-txt{
+.main_img1 h2{
   font-size: 44px;
   color: #fff5fe;
 }
 
-p.mainimage-txt{
+.main_img1 p{
   font-size: 22px;
+  margin: 30px 0 0 0;
   color: #fff5fe;
+  line-height: 130%
 }
 
-.greeting{
+/* ================================================
+PC：main：イメージ2
+================================================ */
+
+.main_img2{
   background-image:url(images/greeting1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   width: 100%;
   height: 500px;
-  margin: 0 auto; /* ボックス外側の余白 */
-  padding: 0; /* ボックス内側の余白 */
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.greeting-txt{
-  width: 750px;
-}
-
-h2.greeting-txt{
+.main_img2 h2{
   font-size: 40px;
   color: #48bac2;
 }
 
-p.greeting-txt{
+.main_img2 p{
   font-size: 18px;
   color: #010c21;
-  line-height: 35px
+  line-height: 33px;
+  margin: 48px 0 0 0;
 }
 
-.card-all{
+/* ================================================
+PC：main：カードエリア
+================================================ */
+
+.card_area{
   width: 100%;
-  margin: 0 auto; /* ボックス外側の余白 */
+  margin: 0 auto;
+  padding: 0 0 90px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   position: relative;
-  z-index:100;
+  z-index: 10;
 }
 
-.card-all::after{
+.card_area::after{
   content: '';
   display: inline-block;
   width: 100%;
-  height: 846px;
+  height: 978px;
   background-color: #f3ebf2;
-  margin: 0 auto; /* ボックス外側の余白 */
+  margin: 0 auto;
   position: absolute;
   bottom: 0;
-  z-index:10;
-}
-
-.card-set1{
-  width: 1140px;
-  display: flex;
-  justify-content: space-between; /* 横方向を両端に付けた上で均等揃え */
-  margin: 0 auto; /* ボックス外側の余白 */
-  z-index:100;
-  position: relative;
-}
-
-.card-set2{
-  width: 1140px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto; /* ボックス外側の余白 */
-  z-index:100;
-  position: relative;
-  padding: 0 0 90px 0;
+  z-index: 1;
 }
 
 .card{
   width: 360px;
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+  margin: 0 16px 0 16px;
+  z-index: 10;
 }
 
-.card-img1{
+.card img{
   width: 360px;
-  margin: 99px 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+  margin: 99px 0 0 0;
 }
 
-.card-img2{
-  width: 360px;
-  margin: 70px 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
-}
-
-.card-txt{
+.card p{
   width: 360px;
   text-align: center;
-  margin: 18px 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+  margin: 18px 0 0 0;
   font-size: 16px;
+  line-height: 200%;
 }
 
-.card-btn{
-  width: 360px;
-  margin: 38px auto 0px auto; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
-}
-
-a.card-btnX{
+.card a{
   text-decoration: none;
   font-size: 18px;
   color: #fff5fe;
@@ -239,136 +313,129 @@ a.card-btnX{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0px auto; /* ボックス外側の余白 */
+  margin: 40px auto 0 auto;
   padding: 0 10px 0 10px;
 }
 
-.card-btnX::before{
+.card a::before{
   content: 'more';
   font-size: 18px;
   font-weight: bold;
-  margin: 0 75px 0 0; /* ボックス外側の余白 */
+  margin: 0 75px 0 0;
 }
 
-.shop-info{
+/* ================================================
+PC：main：ショップインフォ
+================================================ */
+
+.shop_info{
   width: 100%;
   display: flex;
-  justify-content: space-between;/* 横方向の配置：均一（サイドぴったり） */
-  margin: 0 auto 0 auto; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+  justify-content: space-between;
+  background-color: #cccccc;
 }
 
-.shop-info-left-new{
+.shop_info_SP{
+  display: none;
+}
+
+/* ================================================
+PC：main：ショップインフォ（左側）
+================================================ */
+
+.shop_info_left{
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  background-color: #fff5fe;
 }
 
-.shop-info-left{
-  margin: 0 59px 0 0; /* ボックス外側の余白 */
-  padding: 0 0 0 0; /* ボックス内側の余白 */
-}
-
-h4.shop-info-left{
+.shop_info_left h3{
   font-size: 28px;
   color: #48bac2;
   text-align:left;
-  margin: 0 0 20px 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+  margin: 0 0 20px 0;
 }
 
-ul.shop-info-left{
+.shop_info_left ul{
   list-style: none;
-  margin: 0 0;
-  padding: 90px 0 101px 0; /* ボックス内側の余白 */
+  padding: 90px 0 101px 0;
 }
 
-li.shop-info-left{
+.shop_info_left li{
   list-style: none;
-  padding: 0 0; /* ボックス内側の余白 */
 }
 
-dl.shop-info-left{
+.shop_info_left dl{
   display: flex;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0; /* ボックス内側の余白 */
 }
 
-dt.shop-info-left{
+.shop_info_left dt{
   width: 166px;
   text-align:left;
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 10px 0; /* ボックス内側の余白 */
+  padding: 10px 0;
 }
 
-dd.shop-info-left {
+.shop_info_left dd {
   width: 311px;
   text-align: left;
   color: #5a5a5a;
   border-left: 1px solid #5a5a5a;
-  margin: 0 0 0 0;
   padding: 10px 0 10px 30px;
 }
 
-.shop-info-right{
-  width: 50%;
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
-  background-color: #cccccc;
-}
-
-img.shop-info-right{
-  width: 100%;
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
-}
+/* ================================================
+PC：main：ショップインフォ（右側）
+================================================ */
 
 
-footer{
+/* ================================================
+PC：footer
+================================================ */
+
+.footer{
   background-image:url(images/footer.png);
   width: 100%;
   height: 470px;
-  margin: 0 auto; /* ボックス外側の余白 */
-  padding: 0; /* ボックス内側の余白 */
+  margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 0 0 0; /* ボックス内側の余白 */
 }
 
-.footer-box1{
-  margin: 0 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
+.footer_SP{
+  display: none;
 }
 
-h3.footer-box1{
+/* ================================================
+PC：footer：ボックス1（ロゴ・住所・電話・ボタン）
+================================================ */
+
+.footer_box1 h3{
   font-size: 40px;
   color: #fff5fe;
-  margin: 0 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0 0 0; /* ボックス内側の余白 */
-  display: block;
+  margin: 0 0 32px 0;
 }
 
-p.footer-box1{
+.footer_box1 p{
   font-size: 18px;
   color: #fff5fe;
-  margin: 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
 }
 
-.footer-box1-txt-img{
+.footer_box1 img{
+  margin: 0 10px 0 0;
+}
+
+.footer_box1_flex{
   display: flex;
-  align-items: flex-start;/* 垂直方向の配置：上揃え */
+  align-items: center;
   justify-content: center;
-  margin: 10px 0 0 0; /* ボックス外側の余白 */
+  margin: 15px 0 0 0;
 }
 
-img.footer-box1-access{
-  margin: 20px 0 0 0; /* ボックス外側の余白 */
-}
-
-a.footer-btnX{
+.footer_box1 a{
   text-decoration: none;
   font-size: 18px;
   color: #fff5fe;
@@ -378,46 +445,48 @@ a.footer-btnX{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 32px auto 0 auto; /* ボックス外側の余白 */
+  margin: 38px auto 0 auto;
 }
 
-.footer-btnX::after{
+.footer_box1 a::after{
   content: 'ACCESS';
   font-size: 18px;
   font-weight: bold;
-  margin: 0 0 0 5px; /* ボックス外側の余白 */
+  margin: 0 0 0 5px;
 }
 
-nav.footer-box2{
-  margin: 30px 0 0 0; /* ボックス外側の余白 */
+/* ================================================
+PC：footer：ボックス2（リスト）
+================================================ */
+
+.footer_box2{
+  margin: 58px 0 0 0; /* ボックス外側の余白 */
 }
 
-ul.footer-box2{
+.footer_box2 ul{
   list-style: none;
   display: flex;
   justify-content: center;
 }
 
-li.footer-box2{
-  padding: 0 7px; /* ボックス外側の余白 */
+.footer_box2 li{
+  padding: 0 12px;
   border-left:1px solid #faf8f8;
 }
 
-li:first-child.footer-box2{
+.footer_box2 li:first-child{
   border-left:none;
 }
 
-a.footer-box2{
+.footer_box2 a{
   font-size: 14px;
   color: #fff5fe;
-  margin: 0 0 0 0; /* ボックス外側の余白 */
-  padding: 0 0; /* ボックス内側の余白 */
   text-decoration: none;
   display: inline-block;
   position: relative;
 }
 
-a.footer-box2::after {
+.footer_box2 a::after {
   position: absolute;
   content: '';
   bottom: 0;
@@ -428,21 +497,286 @@ a.footer-box2::after {
   transition: all 0.3s ease 0s;
 }
 
-a.footer-box2:hover {
+.footer_box2 a:hover {
   cursor: pointer;
 }
 
-a.footer-box2:hover::after {
+.footer_box2 a:hover::after {
   width: 100%;
 }
 
-small.footer-box3{
+/* ================================================
+PC：footer：ボックス3（コピーライト）
+================================================ */
+
+.footer_box3 small{
   color: #fff5fe;
-  font-size: 14px;
-  margin: 20px 0 40px 0; /* ボックス外側の余白 */
+  font-size: 12px;
+  margin: 40px 0 0px 0; /* ボックス外側の余白 */
   display: block;
 }
 
-img.shop-info-right {
-  vertical-align: middle;
+}
+/* ================================================
+ここからスマホののCSS
+================================================ */
+
+@media only screen and (max-device-width: 560px) {
+
+/* ================================================
+SP：header 
+================================================ */
+.header{
+  display: none;
+}
+
+.header_SP{
+  width: 100%;
+  height: 99px;
+  position: fixed;
+  top: 0px;
+  z-index:100;
+  background-color: #fff;
+}
+
+.header_inner_SP{
+  width: 100%;
+  height: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header_inner_SP h1 a{
+  color: #48bac2;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.header_inner_SP i{
+  color: #48bac2;
+  font-size: 30px;
+}
+
+.header_inner_SP i a{
+  color: #48bac2;
+  font-size: 30px;
+  margin: 0 0 0 15px;
+}
+
+/* ================================================
+SP：main：イメージ1
+================================================ */
+
+.main_img1{
+  background-image:url(images/mainimage1.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  margin: 99px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main_img1 h2{
+  font-size: 50px;
+  color: #fff5fe;
+}
+
+.main_img1 p{
+  font-size: 22px;
+  margin: 30px 0 0 0;
+  color: #fff5fe;
+  line-height: 130%
+}
+
+/* ================================================
+SP：main：イメージ2
+================================================ */
+
+.main_img2{
+  background-image:url(images/greeting1.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main_img2 h2{
+  font-size: 50px;
+  color: #48bac2;
+}
+
+.main_img2 p{
+  font-size: 18px;
+  color: #010c21;
+  line-height: 33px;
+  margin: 20px 0 0 0;
+}
+
+/* ================================================
+SP：main：カードエリア
+================================================ */
+
+.card_area{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 90px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+.card_area::after{
+display: none;
+}
+
+.card{
+  width: 360px;
+  margin: 0 16px 0 16px;
+  z-index: 10;
+}
+
+.card img{
+  width: 360px;
+  margin: 99px 0 0 0;
+}
+
+.card p{
+  width: 360px;
+  text-align: center;
+  margin: 18px 0 0 0;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+.card a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff5fe;
+  background-color: #ff7385;
+  height: 61px;
+  width: 227px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 40px auto 0 auto;
+  padding: 0 10px 0 10px;
+}
+
+.card a::before{
+  content: 'more';
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 60px 0 0;
+}
+
+/* ================================================
+SP：main：ショップインフォ
+================================================ */
+
+.shop_info{
+  display: none;
+}
+
+.shop_info_SP{
+  display: flex;
+  justify-content: center;
+  background-color: #fff5fe;
+}
+
+
+.shop_info_SP h3{
+  font-size: 35px;
+  color: #48bac2;
+  text-align: left;
+  margin: 0 0 30px 0;
+}
+
+.shop_info_SP ul{
+  list-style: none;
+  padding: 90px 0 100px 0px;
+  font-size: 20px;
+}
+
+.shop_info_SP li{
+  list-style: none;
+}
+
+.shop_info_SP dl{
+  display: flex;
+}
+
+.shop_info_SP dt{
+  width: 200px;
+  text-align:left;
+  padding: 10px 0;
+}
+
+.shop_info_SP dd {
+  width: 400px;
+  text-align: left;
+  color: #5a5a5a;
+  border-left: 1px solid #5a5a5a;
+  padding: 10px 0 10px 50px;
+}
+
+/* ================================================
+SP：footer
+================================================ */
+
+.footer{
+  display: none;
+}
+
+.footer_SP{
+  background-image:url(images/footer.png);
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================================================
+SP：footer：ボックス1（ロゴ・住所・電話・ボタン）
+================================================ */
+
+.footer_box1{
+  display: none;
+}
+
+
+/* ================================================
+SP：footer：ボックス2（リスト）
+================================================ */
+
+.footer_box2{
+  display: none;
+}
+
+/* ================================================
+SP：footer：ボックス3（コピーライト）
+================================================ */
+
+.footer_box3 small{
+  color: #fff5fe;
+  font-size: 12px;
+}
+
+/* ================================================
+SP：終了
+================================================ */
+
 }
