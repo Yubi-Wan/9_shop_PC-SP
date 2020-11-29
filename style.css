@@ -105,6 +105,7 @@ input, select {
   vertical-align:middle;
 }
 
+
 @media only screen and (min-device-width: 561px) {
 
 /* ================================================
@@ -228,6 +229,10 @@ PC：main：イメージ1
   line-height: 130%
 }
 
+.main_img1_SP{
+  display: none;
+}
+
 /* ================================================
 PC：main：イメージ2
 ================================================ */
@@ -255,6 +260,10 @@ PC：main：イメージ2
   color: #010c21;
   line-height: 33px;
   margin: 48px 0 0 0;
+}
+
+.main_img2_SP{
+  display: none;
 }
 
 /* ================================================
@@ -517,6 +526,7 @@ PC：footer：ボックス3（コピーライト）
 }
 
 }
+
 /* ================================================
 ここからスマホののCSS
 ================================================ */
@@ -532,7 +542,7 @@ SP：header
 
 .header_SP{
   width: 100%;
-  height: 99px;
+  height: 70px;
   position: fixed;
   top: 0px;
   z-index:100;
@@ -541,7 +551,7 @@ SP：header
 
 .header_inner_SP{
   width: 100%;
-  height: 99px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -549,47 +559,52 @@ SP：header
 
 .header_inner_SP h1 a{
   color: #48bac2;
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 900;
 }
 
 .header_inner_SP i{
-  color: #48bac2;
-  font-size: 30px;
+  color: #5a5a5a;
+  font-size: 20px;
 }
 
 .header_inner_SP i a{
-  color: #48bac2;
-  font-size: 30px;
+  color: #5a5a5a;
+  font-size: 20px;
   margin: 0 0 0 15px;
 }
 
 /* ================================================
 SP：main：イメージ1
 ================================================ */
-
 .main_img1{
+  display: none;
+}
+
+.main_img1_SP{
   background-image:url(images/mainimage1.png);
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
-  margin: 99px auto 0 auto;
+  height: 300px;
+  margin: 70px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.main_img1 h2{
-  font-size: 50px;
+.main_img1_SP h2{
+  font-size: 27px;
   color: #fff5fe;
 }
 
-.main_img1 p{
-  font-size: 22px;
-  margin: 30px 0 0 0;
+.main_img1_SP p{
+  font-size: 14px;
+  margin: 10px 0 0 0;
   color: #fff5fe;
-  line-height: 130%
+  line-height: 20px;
+  box-sizing: border-box;
+  padding: 0px 10px;
 }
 
 /* ================================================
@@ -597,10 +612,14 @@ SP：main：イメージ2
 ================================================ */
 
 .main_img2{
+  display: none;
+}
+
+.main_img2_SP{
   background-image:url(images/greeting1.png);
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 300px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -608,16 +627,18 @@ SP：main：イメージ2
   text-align: center;
 }
 
-.main_img2 h2{
-  font-size: 50px;
+.main_img2_SP h2{
+  font-size: 27px;
   color: #48bac2;
 }
 
-.main_img2 p{
-  font-size: 18px;
+.main_img2_SP p{
+  font-size: 14px;
   color: #010c21;
-  line-height: 33px;
-  margin: 20px 0 0 0;
+  line-height: 20px;
+  margin: 10px 0 0 0;
+  box-sizing: border-box;
+  padding: 0px 10px;
 }
 
 /* ================================================
@@ -627,7 +648,7 @@ SP：main：カードエリア
 .card_area{
   width: 100%;
   margin: 0 auto;
-  padding: 0 0 90px 0;
+  padding: 0 0 50px 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -640,43 +661,46 @@ display: none;
 }
 
 .card{
-  width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 15px;
   margin: 0 16px 0 16px;
   z-index: 10;
 }
 
 .card img{
-  width: 360px;
-  margin: 99px 0 0 0;
+  width: 100%;
+  margin: 50px 0 0 0;
 }
 
 .card p{
-  width: 360px;
+  width: 100%;
   text-align: center;
-  margin: 18px 0 0 0;
-  font-size: 16px;
-  line-height: 200%;
+  margin: 8px 0 0 0;
+  font-size: 17px;
+  line-height: 20px;
 }
 
 .card a{
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #fff5fe;
   background-color: #ff7385;
-  height: 61px;
-  width: 227px;
+  height: 54px;
+  width: 200px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 40px auto 0 auto;
+  margin: 8px auto 0 auto;
   padding: 0 10px 0 10px;
+  border-radius: 12px;
 }
 
 .card a::before{
   content: 'more';
   font-size: 30px;
   font-weight: bold;
-  margin: 0px 60px 0 0;
+  margin: 0px 47px 0 0;
 }
 
 /* ================================================
@@ -690,21 +714,25 @@ SP：main：ショップインフォ
 .shop_info_SP{
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #fff5fe;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 0px 0px;
 }
 
 
 .shop_info_SP h3{
-  font-size: 35px;
+  font-size: 25px;
   color: #48bac2;
   text-align: left;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
 }
 
 .shop_info_SP ul{
   list-style: none;
-  padding: 90px 0 100px 0px;
-  font-size: 20px;
+  padding: 90px 0 0px 0px;
+  padding: 0 0 0 30px ;
 }
 
 .shop_info_SP li{
@@ -716,17 +744,19 @@ SP：main：ショップインフォ
 }
 
 .shop_info_SP dt{
-  width: 200px;
+  width: 30%;
   text-align:left;
   padding: 10px 0;
+  font-size: 14px;
 }
 
 .shop_info_SP dd {
-  width: 400px;
+  width: 70%;
   text-align: left;
   color: #5a5a5a;
   border-left: 1px solid #5a5a5a;
-  padding: 10px 0 10px 50px;
+  padding: 10px 0 10px 10px;
+  font-size: 14px;
 }
 
 /* ================================================
